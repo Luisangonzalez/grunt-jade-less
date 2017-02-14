@@ -6,3 +6,5 @@
 
 ##### To run:
 `npm install` and `grunt server`
+
+Server run on `localhost:8000`

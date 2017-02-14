@@ -1,13 +1,9 @@
 /*eslint no-console: 0*/
 require('jquery');
 
-module.exports = function() {
-  return true;
-};
-
 // example print
-const printHello = () => {
+var printManolo = function() {
   console.log('Hello');
 };
 
-printHello();
+printManolo();
