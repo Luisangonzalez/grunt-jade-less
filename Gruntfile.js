@@ -20,7 +20,11 @@ module.exports = function(grunt) {
         // Add npm packages require
         options: {
           require: ['jquery'],
-          transform: [['babelify', {presets: ['es2015']}]]
+          transform: [
+            ['babelify', {
+              presets: ['es2015']
+            }]
+          ]
         }
       }
     },
@@ -64,6 +68,13 @@ module.exports = function(grunt) {
         }
       }
     },
+    sass: {
+      dist: {
+        files: {
+          'build/css/style.css': 'src/sass/*.scss'
+        }
+      }
+    },
     // Compile pug
     pug: {
       compile: {
@@ -83,8 +94,9 @@ module.exports = function(grunt) {
         livereload: true,
       },
       scripts: {
-        files: ['Gruntfile.js', 'src/js/*.js', 'src/less/*.less', 'src/pug/*.pug', 'src/js/*.js'],
-        tasks: ['eslint', 'less', 'pug', 'browserify', 'uglify', 'cssmin'],
+        files: ['Gruntfile.js', 'src/js/*.js', 'src/less/*.less',
+          'src/sass/*.scss', 'src/pug/*.pug', 'src/js/*.js'],
+        tasks: ['eslint', 'less', 'sass', 'pug', 'browserify', 'uglify', 'cssmin'],
         options: {
           livereload: true,
         }
@@ -101,7 +113,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  // grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+
 
   // Start web server
   grunt.registerTask('server', [
