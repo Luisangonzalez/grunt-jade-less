@@ -5,6 +5,6 @@
 * [Eslint](http://eslint.org/)
 
 ##### To run:
-`npm install` and `grunt server`
+`npm install` and `npm run start`
 
 Server run on `localhost:8000`
